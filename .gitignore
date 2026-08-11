@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Production and test output
+dist/
+dist-ssr/
+coverage/
+cypress/videos/
+cypress/screenshots/
+__screenshots__/
+
+# Tool caches and generated metadata
+.eslintcache
+.vite/
+*.tsbuildinfo
+*.timestamp-*-*.mjs
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local environment files (keep a safe template if one is added)
+.env
+.env.*
+!.env.example
+*.local
+
+# Editors and IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
