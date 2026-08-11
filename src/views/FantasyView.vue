@@ -10,12 +10,16 @@ const maxWomen = 2
 const numberOfRounds = 6
 const rounds = Array.from({ length: numberOfRounds }, (_, i) => `round${i + 1}`)
 const roundAliases = [
-  'South Korea World Cup #1',
-  'Loudenvielle World Cup #2',
-  'Leogang World Cup #3',
-  'Lenzerheide World Cup #4',
-  'La Thuile World Cup #5',
-  'Andorra World Cup #6',
+  "South Korea World Cup #1",
+    "Loudenvielle World Cup #2",
+    "Leogang World Cup #3",
+    "Lenzerheide World Cup #4",
+    "La Thuile World Cup #5",
+    "Andorra World Cup #6",
+    "Les Gets World Cup #7",
+    "2026 World Championships",
+    "Whistler World Cup #8",
+    "Lake Placid World Cup #9"
 ]
 const currency = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -258,12 +262,11 @@ function resetFilters() {
   applyFilters()
 }
 
-function updateTeamState(persist = true) {
+function updateTeamState() {
   team.value = athletes.value.filter((athlete) => athlete.selected)
   athletes.value.forEach((athlete) => {
     athlete.overBudget = !athlete.selected && athlete.value > budget.value
   })
-  if (persist) localStorage.setItem('team', JSON.stringify(team.value))
 }
 
 function toggleAthlete(athlete: Athlete) {
@@ -326,7 +329,7 @@ function loadFromHistory(number: number) {
     athlete.selected = ids.has(athlete.id)
   })
   updateTeamState()
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  // window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 function clearHistory() {
