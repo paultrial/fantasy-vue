@@ -36,7 +36,7 @@ const calculatingPrediction = ref(false)
 const sortKey = reactive({ key: 'value', direction: 'desc' as 'asc' | 'desc' })
 
 const filters = reactive({
-  injuryOnly: false,
+  injuryOnly: true,
   name: '',
   gender: '',
   country: '',
@@ -237,7 +237,7 @@ function applyFilters() {
 
 function resetFilters() {
   Object.assign(filters, {
-    injuryOnly: false,
+    injuryOnly: true,
     name: '',
     gender: '',
     country: '',
