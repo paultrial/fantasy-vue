@@ -262,11 +262,12 @@ function resetFilters() {
   applyFilters()
 }
 
-function updateTeamState() {
+function updateTeamState(b: boolean | undefined = false) {
   team.value = athletes.value.filter((athlete) => athlete.selected)
   athletes.value.forEach((athlete) => {
     athlete.overBudget = !athlete.selected && athlete.value > budget.value
   })
+  if (b !== false) localStorage.setItem('team', JSON.stringify(team.value))
 }
 
 function toggleAthlete(athlete: Athlete) {
