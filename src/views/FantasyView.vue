@@ -10,16 +10,16 @@ const maxWomen = 2
 const numberOfRounds = 6
 const rounds = Array.from({ length: numberOfRounds }, (_, i) => `round${i + 1}`)
 const roundAliases = [
-  "South Korea World Cup #1",
-    "Loudenvielle World Cup #2",
-    "Leogang World Cup #3",
-    "Lenzerheide World Cup #4",
-    "La Thuile World Cup #5",
-    "Andorra World Cup #6",
-    "Les Gets World Cup #7",
-    "2026 World Championships",
-    "Whistler World Cup #8",
-    "Lake Placid World Cup #9"
+  'South Korea World Cup #1',
+  'Loudenvielle World Cup #2',
+  'Leogang World Cup #3',
+  'Lenzerheide World Cup #4',
+  'La Thuile World Cup #5',
+  'Andorra World Cup #6',
+  'Les Gets World Cup #7',
+  '2026 World Championships',
+  'Whistler World Cup #8',
+  'Lake Placid World Cup #9',
 ]
 const currency = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -419,6 +419,8 @@ async function calculateBestTeams() {
     bestTeams.value = JSON.parse(cached) as BestTeam[]
     return
   }
+
+  const start = performance.now()
   calculatingBest.value = true
   await nextTick()
   await new Promise((resolve) => setTimeout(resolve, 20))
@@ -455,6 +457,10 @@ async function calculateBestTeams() {
   bestTeams.value = results
   localStorage.setItem(cacheKey, JSON.stringify(results))
   calculatingBest.value = false
+  const end = performance.now()
+  alert(
+    `Best teams calculated in ${(end - start).toFixed(2)} ms. Found ${results.length} best teams.`,
+  )
 }
 
 async function predictNextTeam() {
