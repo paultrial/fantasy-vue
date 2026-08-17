@@ -615,10 +615,12 @@ watch(() => route.meta.dataFile, loadData, { immediate: true })
             ><input
               v-model.number="filters.priceMin"
               type="number"
+              step="1000"
               placeholder="min"
               @input="applyFilters" /><input
               v-model.number="filters.priceMax"
               type="number"
+              step="1000"
               placeholder="max"
               @input="applyFilters"
           /></label>
@@ -641,10 +643,12 @@ watch(() => route.meta.dataFile, loadData, { immediate: true })
             ><input
               v-model.number="filters.totalMin"
               type="number"
+              step="5"
               placeholder="min"
               @input="applyFilters" /><input
               v-model.number="filters.totalMax"
               type="number"
+              step="5"
               placeholder="max"
               @input="applyFilters"
           /></label>
@@ -662,10 +666,12 @@ watch(() => route.meta.dataFile, loadData, { immediate: true })
             ><input
               v-model.number="filters.pointDeltaMin"
               type="number"
+              step="10"
               :placeholder="String(pointDeltaRange.min.toFixed(1))"
               @input="applyFilters" /><input
               v-model.number="filters.pointDeltaMax"
               type="number"
+              step="10"
               :placeholder="String(pointDeltaRange.max.toFixed(1))"
               @input="applyFilters"
           /></label>
@@ -674,10 +680,12 @@ watch(() => route.meta.dataFile, loadData, { immediate: true })
             ><input
               v-model.number="filters.priceDeltaMin"
               type="number"
+              step="100"
               :placeholder="String(priceDeltaRange.min.toFixed(0))"
               @input="applyFilters" /><input
               v-model.number="filters.priceDeltaMax"
               type="number"
+              step="100"
               :placeholder="String(priceDeltaRange.max.toFixed(0))"
               @input="applyFilters"
           /></label>
@@ -686,6 +694,7 @@ watch(() => route.meta.dataFile, loadData, { immediate: true })
             ><input
               v-model.number="roundFilters[round]"
               type="number"
+              step="5"
               placeholder="min"
               @input="applyFilters"
           /></label>
