@@ -615,12 +615,12 @@ watch(() => route.meta.dataFile, loadData, { immediate: true })
             ><input
               v-model.number="filters.priceMin"
               type="number"
-              step="1000"
+              step="5000"
               placeholder="min"
               @input="applyFilters" /><input
               v-model.number="filters.priceMax"
               type="number"
-              step="1000"
+              step="5000"
               placeholder="max"
               @input="applyFilters"
           /></label>
