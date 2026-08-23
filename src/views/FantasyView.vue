@@ -7,7 +7,7 @@ const route = useRoute()
 const money = 1_500_000
 const maxMen = 4
 const maxWomen = 2
-const numberOfRounds = 6
+const numberOfRounds = 7
 const rounds = Array.from({ length: numberOfRounds }, (_, i) => `round${i + 1}`)
 const roundAliases = [
   'South Korea World Cup #1',
