@@ -486,7 +486,7 @@ function heatColor(value: number, type: 'red' | 'green') {
   const normalized = (Math.max(range.min, Math.min(value, range.max)) - range.min) / span
   return type === 'red'
     ? `rgb(${Math.round(220 * (1 - normalized))},0,0)`
-    : `rgb(0,${Math.round(255 * normalized)},0)`
+    : `rgb(0,${Math.round(220 * (1 - normalized))},0)`
 }
 
 async function loadData() {
